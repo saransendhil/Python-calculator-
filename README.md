@@ -1,2 +1,0 @@
-# Python-calculator-
-README.md
