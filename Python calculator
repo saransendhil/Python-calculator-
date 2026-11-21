@@ -1,1 +1,86 @@
-calculator.pycalculator.py
+
+
+import math
+
+def calculator():
+    print("\n" + "=" * 40)
+    print("       SMART PYTHON CALCULATOR")
+    print("=" * 40)
+
+    while True:
+        print("""
+        1. Addition (+)
+        2. Subtraction (-)
+        3. Multiplication (*)
+        4. Division (/)
+        5. Modulus (%)
+        6. Power (**)
+        7. Floor Division (//)
+        8. Square Root
+        9. Percentage
+        10. Exit
+        """)
+
+        try:
+            choice = int(input("Enter your choice: "))
+
+            if choice == 10:
+                print("Thank you for using Smart Calculator!")
+                break
+
+            if choice == 8:
+                num = float(input("Enter a number: "))
+
+                if num >= 0:
+                    print("Square Root =", math.sqrt(num))
+                else:
+                    print("Error: Negative number!")
+
+            elif choice == 9:
+                num = float(input("Enter number: "))
+                percent = float(input("Enter percentage: "))
+
+                print("Result =", num * percent / 100)
+
+            elif choice >= 1 and choice <= 7:
+                a = float(input("Enter first number: "))
+                b = float(input("Enter second number: "))
+
+                if choice == 1:
+                    print("Result =", a + b)
+
+                elif choice == 2:
+                    print("Result =", a - b)
+
+                elif choice == 3:
+                    print("Result =", a * b)
+
+                elif choice == 4:
+                    if b != 0:
+                        print("Result =", a / b)
+                    else:
+                        print("Error: Cannot divide by zero!")
+
+                elif choice == 5:
+                    if b != 0:
+                        print("Result =", a % b)
+                    else:
+                        print("Error: Cannot divide by zero!")
+
+                elif choice == 6:
+                    print("Result =", a ** b)
+
+                elif choice == 7:
+                    if b != 0:
+                        print("Result =", a // b)
+                    else:
+                        print("Error: Cannot divide by zero!")
+
+            else:
+                print("Invalid choice! Try again.")
+
+        except ValueError:
+            print("Please enter valid numbers!")
+
+
+calculator()
